@@ -66,7 +66,9 @@ public class SearchResultsTest {
 		String resultsFilteredCount = searchPage.getResultsCount();
 		Integer resultFilterCount = Util.extractIntegerFromString(resultsFilteredCount);
 		Integer resultFullCount = (Integer) this.shareContent.sharedValues.get("FordF150AllCount");
+		System.out.println("Ford F-150 count after filer - " + resultFilterCount);
 		assertThat(resultFilterCount, not(comparesEqualTo(resultFullCount)));
+		
 		
 	}
 

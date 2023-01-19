@@ -43,10 +43,11 @@ public class SearchResultPage {
 	}
 
 	public void setMaxYear(String maxYr) throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(5000); //Waiting for page load to update result
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(maxYearTxtBox)); //Move to the element
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='';", driver.findElement(maxYearTxtBox));  //Remove using JavaScript Executor
 		driver.findElement(maxYearTxtBox).sendKeys(maxYr);
+		Thread.sleep(5000); //Waiting for page load to update result
 		
 	}
 	
